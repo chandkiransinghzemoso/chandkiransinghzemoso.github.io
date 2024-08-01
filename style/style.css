@@ -1,5 +1,6 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: #F7E7DC;
     margin: 0;
     padding: 0;
 }
@@ -31,6 +32,10 @@ section {
     margin: 1em auto;
     max-width: 800px;
     text-align: center;
+}
+
+.tab-content {
+    display: none;
 }
 
 #contact form {
@@ -66,7 +71,9 @@ section {
 }
 
 .grid-item {
-    width: calc(33.333% - 2em);
+    width: calc(33.333% - 3em);
+    border: groove;
+    padding: 10px;
 }
 
 .grid-item img {

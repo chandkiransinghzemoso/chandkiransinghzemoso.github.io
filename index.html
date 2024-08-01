@@ -4,35 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
     <header>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#contact">Contact Me</a></li>
-                <li><a href="#gallery">My Gallery</a></li>
+                <li><a href="#home" onclick="showSection(event, 'home')">Home</a></li>
+                <li><a href="#about" onclick="showSection(event, 'about')">About Me</a></li>
+                <li><a href="#contact" onclick="showSection(event, 'contact')">Contact Me</a></li>
+                <li><a href="#gallery" onclick="showSection(event, 'gallery')">My Gallery</a></li>
             </ul>
         </nav>
     </header>
     
     <main>
-        <section id="home">
+        <section id="home" class="tab-content">
             <h1>Welcome to My Portfolio</h1>
             <p>This is the home section of the portfolio.</p>
         </section>
         
-        <section id="about">
+        <section id="about" class="tab-content" >
             <h1>About Me</h1>
-            <p>My name is Chand Kiran Singh, and I am a passionate software developer with a strong focus on JavaScript and Node.js. Currently, I am interested in the position of Senior Node.js Developer at Hippo Innovations.</p>
-            <p>I have experience preparing lesson plans, including an introduction, explanation of the Fibonacci sequence, its relevance to computer science, practical applications, code demonstrations, and engaging techniques.</p>
-            <p>One of my recent projects involved working on a seeder project with a specific database schema that includes Users, Contracts, CashKicks, and CashKickContracts. Additionally, I am preparing for a meeting regarding the Raptor IO migration project.</p>
-            <p>I aim to bring my expertise and passion for software development to new challenges and opportunities, continually learning and growing in the field.</p>
+            <p>Chand Kiran Singh is a proficient Full-stack developer specializing in Node.js for backend development and React.js for the frontend. With extensive experience in building and maintaining dynamic web applications, he leverages MySQL for robust database management. Chand thrives in fast-paced environments and excels in collaborating with cross-functional teams to deliver high-quality, user-centric products that align with business objectives. His dedication to excellence and keen problem-solving skills make him a valuable asset in any development team.</p>
         </section>
         
-        <section id="contact">
+        <section id="contact" class="tab-content">
             <h1>Contact Me</h1>
             <form id="contactForm">
                 <label for="name">Name:</label>
@@ -44,25 +41,46 @@
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" required></textarea>
                 
-                <button type="submit">Send</button>
+                <section>
+                    <button type="reset">Reset</button>
+                    <button type="submit">Send</button>
+                </section>
                 <p id="acknowledgement" style="display:none;">Thank you! Your message has been sent.</p>
             </form>
         </section>
         
-        <section id="gallery">
+        <section id="gallery" class="tab-content">
             <h1>My Gallery</h1>
             <div class="grid">
-                <div class="grid-item"><img src="image1.jpg" alt="Gallery Image 1"></div>
-                <div class="grid-item"><img src="image2.jpg" alt="Gallery Image 2"></div>
-                <div class="grid-item"><img src="image3.jpg" alt="Gallery Image 3"></div>
+                <div class="grid-item"><img src="assets/images/img1.png" alt="Gallery Image 1"></div>
+                <div class="grid-item"><img src="assets/images/img2.png" alt="Gallery Image 2"></div>
+                <div class="grid-item"><img src="assets/images/img3.png" alt="Gallery Image 3"></div>
+                <div class="grid-item"><img src="assets/images/img4.png" alt="Gallery Image 4"></div>
+                <div class="grid-item"><img src="assets/images/img5.png" alt="Gallery Image 4"></div>
+                <div class="grid-item"><img src="assets/images/img6.png" alt="Gallery Image 4"></div>
             </div>
         </section>
     </main>
 
     <script>
+        function showSection(event, sectionId) {
+            event.preventDefault();
+            let sections = document.querySelectorAll('.tab-content');
+            sections.forEach(function(section) {
+                section.style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
+            document.getElementById('acknowledgement').style.display = 'none';
+
+        }
+
         document.getElementById('contactForm').addEventListener('submit', function(event) {
             event.preventDefault();
             document.getElementById('acknowledgement').style.display = 'block';
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection(event, 'home');
         });
     </script>
 </body>

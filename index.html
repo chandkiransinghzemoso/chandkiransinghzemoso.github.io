@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#contact">Contact Me</a></li>
+                <li><a href="#gallery">My Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="home">
+            <h1>Welcome to My Portfolio</h1>
+            <p>This is the home section of the portfolio.</p>
+        </section>
+        
+        <section id="about">
+            <h1>About Me</h1>
+            <p>My name is Chand Kiran Singh, and I am a passionate software developer with a strong focus on JavaScript and Node.js. Currently, I am interested in the position of Senior Node.js Developer at Hippo Innovations.</p>
+            <p>I have experience preparing lesson plans, including an introduction, explanation of the Fibonacci sequence, its relevance to computer science, practical applications, code demonstrations, and engaging techniques.</p>
+            <p>One of my recent projects involved working on a seeder project with a specific database schema that includes Users, Contracts, CashKicks, and CashKickContracts. Additionally, I am preparing for a meeting regarding the Raptor IO migration project.</p>
+            <p>I aim to bring my expertise and passion for software development to new challenges and opportunities, continually learning and growing in the field.</p>
+        </section>
+        
+        <section id="contact">
+            <h1>Contact Me</h1>
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                
+                <button type="submit">Send</button>
+                <p id="acknowledgement" style="display:none;">Thank you! Your message has been sent.</p>
+            </form>
+        </section>
+        
+        <section id="gallery">
+            <h1>My Gallery</h1>
+            <div class="grid">
+                <div class="grid-item"><img src="image1.jpg" alt="Gallery Image 1"></div>
+                <div class="grid-item"><img src="image2.jpg" alt="Gallery Image 2"></div>
+                <div class="grid-item"><img src="image3.jpg" alt="Gallery Image 3"></div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            document.getElementById('acknowledgement').style.display = 'block';
+        });
+    </script>
+</body>
+</html>
